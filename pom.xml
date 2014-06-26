@@ -5,22 +5,21 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   
-  <properties>
+	<properties>
 		<junit.version>4.11</junit.version>
-		<spring.version>4.0.5.RELEASE</spring.version>
-		<spring-data-mongodb.version>1.5.0.RELEASE</spring-data-mongodb.version>
-		<java-mongodb-driver.version>2.12.2</java-mongodb-driver.version>
 		<log4j.version>1.2.17</log4j.version>
 		<org.slf4j.version>1.7.7</org.slf4j.version>
+		<!-- <spring.version>4.0.5.RELEASE</spring.version>
+		<spring-data-mongodb.version>1.5.0.RELEASE</spring-data-mongodb.version>
+		<java-mongodb-driver.version>2.12.2</java-mongodb-driver.version> -->
 	</properties>
 	
-  	
 	<dependencies>
-		<dependency>
+		<!-- <dependency>
 	         <groupId>com.t7p.alumn</groupId>
 			 <artifactId>alumn-models</artifactId>
 			 <version>0.0.1-SNAPSHOT</version>
-    	</dependency>
+    	</dependency> -->
 	
 		<!-- Junit framework -->
 		<dependency>
@@ -30,7 +29,7 @@
 		</dependency>
 		
 		<!-- Spring framework -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
 			<version>${spring.version}</version>
@@ -50,7 +49,7 @@
             <groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
             <version>${spring.version}</version>
-        </dependency>
+        </dependency> -->
         
         <!-- Logging -->
 		<dependency>
@@ -78,20 +77,47 @@
 		</dependency>
         
 		<!-- mongodb java driver -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongo-java-driver</artifactId>
 			<version>${java-mongodb-driver.version}</version>
-		</dependency>
+		</dependency> -->
 		
 		<!-- Spring data mongodb -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-mongodb</artifactId>
 			<version>${spring-data-mongodb.version}</version>
-		</dependency>
+		</dependency> -->
 		
 	</dependencies>
- 
+ 	
+ 	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.0.2</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.2.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+ 	
  
 </project>
